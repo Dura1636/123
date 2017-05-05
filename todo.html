@@ -10,7 +10,13 @@
 </form>
 <ol>
     <#list tasks as task>
-        <li>${task.taskName}</li>
+        <li>
+      <form method="post" action="delete">
+          ${task.taskName}
+          <input type="submit" value="удалить">
+          <input name="id" type="hidden" value="${task.id}">
+      </form>
+        </li>
     </#list>
     <!--<li>Wake up</li>-->
     <!--<li>Take over the world</li>-->
